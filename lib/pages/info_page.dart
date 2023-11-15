@@ -51,85 +51,109 @@ class infoPage extends StatelessWidget {
                fontSize: 25, //font size to make it clearer
             ) ,
             ),
-          
+            SizedBox(height: 15), 
+          //link through to NZ Sign week
            Text(
-             'First link',
+             'NZSL Week',
              textAlign: TextAlign.center,
              style: const TextStyle(
                fontFamily: 'KottaOne', //changing the font style
-               fontSize: 25, //font size to make it clearer
+               fontSize: 20, //font size to make it clearer
             ) ,
             ),
             Padding(
               padding:EdgeInsets.only(left: 15, right: 15),
               child: Text(
-             'Add link info here',
+             'Every year New Zealand celebrates NZSL. It encourages people to learn basic signs and informs the public about sign language and its importance. To get involved in the next sign language week or to find out more about the New Zealand Sign Language week, check out the link below. ',
              textAlign: TextAlign.center,
              
             ),
-            //NZSL with hard of hearing and the deaf
+            
+            //Information to NZSL Dictionary
             ),
                SizedBox(height: 20), 
             Padding(
               padding: EdgeInsets.only(left: 15, right: 15),
              
              child: Text(
-              'Second link info',
+              'NZSL Dictionary',
              textAlign: TextAlign.center,
              style: const TextStyle(
                fontFamily: 'KottaOne', //changing the font style
-               fontSize: 25, //font size to make it clearer
+               fontSize: 20, //font size to make it clearer
             ) ,
              ),
             ),
             Padding(
               padding:EdgeInsets.only(left: 15, right: 15),
               child: Text(
-             'Add link info here',
+             'This website is a web-based platform that has all New Zealand signs and has videos about how to do each sign. They have a sign a day to try encouraging more learning to learn more, check the link below. ',
              textAlign: TextAlign.center,
              
             ),
             ),
             SizedBox(height: 20), 
-            //Information on main page about the use of NZSL and autism
+            //Information link to Deaf society
             Padding(
               padding: EdgeInsets.only(left: 15, right: 15),
              
              child: Text(
-              'third link',
+              'Deaf Aotearoa',
              textAlign: TextAlign.center,
              style: const TextStyle(
                fontFamily: 'KottaOne', //changing the font style
-               fontSize: 25, //font size to make it clearer
+               fontSize: 20, //font size to make it clearer
             ) ,
              ),
             ),
             Padding(
               padding:EdgeInsets.only(left: 15, right: 15),
               child: Text(
-             'Add link info here',
+             'To learn more about the hearing impaired and deaf communities, check out the Deaf Aotearoa organization. They have lots of useful information and ways to get involved. ',
              textAlign: TextAlign.center,
              
             ),
             ),
              SizedBox(height: 20), 
-            //Information on main page about the use of NZSL and autism
+            //Information link to Autism NZ
             Padding(
               padding: EdgeInsets.only(left: 15, right: 15),
              
              child: Text(
-              'Fourth link',
+              'Autism NZ',
              textAlign: TextAlign.center,
              style: const TextStyle(
                fontFamily: 'KottaOne', //changing the font style
-               fontSize: 25, //font size to make it clearer
+               fontSize: 20, //font size to make it clearer
             ) ,
              ),
             ),
             Padding(
               padding:EdgeInsets.only(left: 15, right: 15),
               child: Text(
-             'Add link info here',
+             'If you want to learn more about autism in New Zealand, have a look at the Autism New Zealand page. They have lots of information on education on tools to help out. Check the link below. ',
+             textAlign: TextAlign.center,
+             
+            ),
+            ),
+            SizedBox(height: 20), 
+            //Information link to First Signs
+            Padding(
+              padding: EdgeInsets.only(left: 15, right: 15),
+             
+             child: Text(
+              'First Signs NZ',
+             textAlign: TextAlign.center,
+             style: const TextStyle(
+               fontFamily: 'KottaOne', //changing the font style
+               fontSize: 20, //font size to make it clearer
+            ) ,
+             ),
+            ),
+            Padding(
+              padding:EdgeInsets.only(left: 15, right: 15),
+              child: Text(
+             'A place for parents to learn sign language and learn the benefits of sign language with young children. Many tutorials provided teach sign language to both parents and children in one video. Check out the link below. ',
              textAlign: TextAlign.center,
              
             ),
