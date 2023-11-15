@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:tam01/pages/info_page.dart';
+import 'package:tam01/pages/name_page.dart';
 
 class homePage extends StatelessWidget {
   const homePage({super.key});
@@ -175,11 +176,17 @@ class NavigationDrawer extends StatelessWidget {
          onTap: () {},
         ),
       
-      ListTile(
+        ListTile(
        leading: const Icon(Icons.person_outline_outlined),
        title: const Text('Name Search'),
-       onTap: () {},
-      ),
+       onTap: () {
+        Navigator.pushReplacement(
+        context,MaterialPageRoute(builder: (context) => namePage (), //Navigating to the information page
+        ),
+        );
+       },
+        ),
+
        ListTile(
        leading: const Icon(Icons.info_outline),
        title: const Text('Information'),
@@ -188,14 +195,18 @@ class NavigationDrawer extends StatelessWidget {
         context,MaterialPageRoute(builder: (context) => infoPage (), //Navigating to the information page
         ),
         );
-
-
        },
       ),
+
        ListTile(
        leading: const Icon(Icons.home_outlined),
        title: const Text('Home'),
-       onTap: () {},
+      onTap: () {
+        Navigator.pushReplacement(
+        context,MaterialPageRoute(builder: (context) => homePage (), //Navigating to the information page
+        ),
+        );
+       },
       ),
       ],
    );

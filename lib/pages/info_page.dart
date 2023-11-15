@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:tam01/pages/home_pages.dart';
+import 'package:tam01/pages/name_page.dart';
+import 'package:url_launcher/url_launcher.dart';
+import 'package:url_launcher/url_launcher_string.dart';
+
 
 class infoPage extends StatelessWidget {
   const infoPage({super.key});
@@ -68,9 +72,24 @@ class infoPage extends StatelessWidget {
              textAlign: TextAlign.center,
              
             ),
-            
-            //Information to NZSL Dictionary
             ),
+            //Adding in the link
+             InkWell(
+              child: const Padding(
+                padding: EdgeInsets.all(10),
+                child: Text(
+                  'NZSL Week Link Here',
+                  style:TextStyle(
+                    color: Colors.blue,
+                    decoration:TextDecoration.underline,
+                  ),
+                  textAlign: TextAlign.center,
+                ),
+
+              ),
+              onTap:() => launchUrlString('https://nzslweek.org.nz/ '),
+             ),
+            //Information to NZSL Dictionary
                SizedBox(height: 20), 
             Padding(
               padding: EdgeInsets.only(left: 15, right: 15),
@@ -92,6 +111,22 @@ class infoPage extends StatelessWidget {
              
             ),
             ),
+            //Adding in the link
+             InkWell(
+              child: const Padding(
+                padding: EdgeInsets.all(10),
+                child: Text(
+                  'Dictionary Link Here',
+                  style:TextStyle(
+                    color: Colors.blue,
+                    decoration:TextDecoration.underline,
+                  ),
+                  textAlign: TextAlign.center,
+                ),
+
+              ),
+              onTap:() => launchUrlString('https://www.nzsl.nz/  '),
+             ),
             SizedBox(height: 20), 
             //Information link to Deaf society
             Padding(
@@ -114,6 +149,22 @@ class infoPage extends StatelessWidget {
              
             ),
             ),
+                  //Adding in the link
+             InkWell(
+              child: const Padding(
+                padding: EdgeInsets.all(10),
+                child: Text(
+                  'Deaf NZ Link Here',
+                  style:TextStyle(
+                    color: Colors.blue,
+                    decoration:TextDecoration.underline,
+                  ),
+                  textAlign: TextAlign.center,
+                ),
+
+              ),
+              onTap:() => launchUrlString('https://www.deaf.org.nz/ '),
+             ),
              SizedBox(height: 20), 
             //Information link to Autism NZ
             Padding(
@@ -136,6 +187,22 @@ class infoPage extends StatelessWidget {
              
             ),
             ),
+             //Adding in the link
+             InkWell(
+              child: const Padding(
+                padding: EdgeInsets.all(10),
+                child: Text(
+                  'Autism NZ Link Here',
+                  style:TextStyle(
+                    color: Colors.blue,
+                    decoration:TextDecoration.underline,
+                  ),
+                  textAlign: TextAlign.center,
+                ),
+
+              ),
+              onTap:() => launchUrlString('https://autismnz.org.nz/'),
+             ),
             SizedBox(height: 20), 
             //Information link to First Signs
             Padding(
@@ -158,6 +225,22 @@ class infoPage extends StatelessWidget {
              
             ),
             ),
+                    //Adding in the link
+             InkWell(
+              child: const Padding(
+                padding: EdgeInsets.all(10),
+                child: Text(
+                  'First Signs Link Here',
+                  style:TextStyle(
+                    color: Colors.blue,
+                    decoration:TextDecoration.underline,
+                  ),
+                  textAlign: TextAlign.center,
+                ),
+
+              ),
+              onTap:() => launchUrlString('https://firstsigns.co.nz/learn-sign/ '),
+             ),
             SizedBox(height:30),
         ],
       
@@ -201,11 +284,18 @@ class NavigationDrawer extends StatelessWidget {
          onTap: () {},
         ),
       
-      ListTile(
+         ListTile(
        leading: const Icon(Icons.person_outline_outlined),
        title: const Text('Name Search'),
-       onTap: () {},
-      ),
+       onTap: () {
+        Navigator.pushReplacement(
+        context,MaterialPageRoute(builder: (context) => namePage (), //Navigating to the information page
+        ),
+        );
+       },
+        ),
+
+
        ListTile(
        leading: const Icon(Icons.info_outline),
        title: const Text('Information'),
