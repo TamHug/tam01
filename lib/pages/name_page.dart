@@ -29,7 +29,8 @@ class namePage extends StatelessWidget {
                     image: AssetImage('assets/images/appBar04.jpg'), //Setting the image for background
                     fit: BoxFit.cover)),//making sure it fit and wasn't distorted
           ),
-        centerTitle: true, //making the title center of the widget
+        centerTitle: true, 
+        //making the title center of the widget
 
       ),
       drawer: const NavigationDrawer(),
