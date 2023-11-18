@@ -3,10 +3,17 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:tam01/pages/info_page.dart';
 import 'package:tam01/pages/home_pages.dart';
 
+// ignore: camel_case_types
 class namePage extends StatelessWidget {
-  const namePage({super.key});
+  namePage({super.key});
   
   get child => null;
+
+  //Search bar lists
+  var allLetters = List.generate(26, (index) => 'item $index');
+  var letters = [];
+  var searchHistory = [];
+  final TextEditingController searchController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -39,13 +46,16 @@ class namePage extends StatelessWidget {
 
       body: SingleChildScrollView(
          child: Column(
-        
-
-        crossAxisAlignment: CrossAxisAlignment.stretch,
-
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: <Widget> [ //Search Bar
+          SizedBox(height: 15),
+          SearchBar(
+            controller: searchController,
+            hintText: 'Search Name',
+          ),
+          ],
+         ),
       ),
-      ),
-
 
     );
   }
