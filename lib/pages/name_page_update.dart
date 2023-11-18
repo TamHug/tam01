@@ -16,6 +16,33 @@ class namePage extends StatelessWidget {
   final TextEditingController searchController = TextEditingController();
 
   @override
+  void initState(){
+    super.initState();
+    searchController.addListener(queryListener);
+  }
+
+    @override
+  void dispose(){
+    searchController.removeListener(queryListener);
+    searchController.dispose();
+    super.dispose();
+  }
+
+  void queryListener() {
+    search (searchController.text);
+    },
+
+  void search(String query){
+    if (query.isEmpty){
+      letters = allLetters;
+    },
+    else {
+      setState(){
+        letters = allLetters.where(e)=>e.toLowerCase().contains(query.toLowerCase())).toList();
+    },
+  },
+
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
 
@@ -45,15 +72,43 @@ class namePage extends StatelessWidget {
       backgroundColor: Color.fromRGBO(212, 239, 230, 1),
 
       body: SingleChildScrollView(
+        child: Padding(
+          padding : EdgeInsets.only(left: 8, right:8),
          child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget> [ //Search Bar
           SizedBox(height: 15),
           SearchBar(
             controller: searchController,
+            leading: IconButton(
+              onPressed(){
+
+              },
+              icon:Icon(Icon.search)),
+               trailing: IconButton(
+              onPressed(){
+
+              },
+              icon:Icon(Icon.search)),
             hintText: 'Search Name',
           ),
+
+            ListView.builder(
+              itemCount: letters.isEmpty ? allLetters.length : letters.length,
+              itemBuilder: (context, index){
+              final letter = letters.isEmpty ? allLetter[index] : letters[index];
+
+                return Card(
+                  child Column(
+                    children: [
+                      Text('Letter: $letter'),
+                      ],
+                    ),
+                  ),
+              }, 
+            ),
           ],
+           ),
          ),
       ),
 
