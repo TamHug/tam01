@@ -3,17 +3,37 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:tam01/pages/info_page.dart';
 import 'package:tam01/pages/home_pages.dart';
 
-// ignore: camel_case_types
-class namePage extends StatelessWidget {
+// ignore: camel_case_types, must_be_immutable
+class namePage extends StatefulWidget {
   namePage({super.key});
   
   get child => null;
 
   //Search bar lists
-  var allLetters = List.generate(26, (index) => 'item $index');
+  var allLetters = List.generate(26, (index) => 'letter $index');
   var letters = [];
   var searchHistory = [];
   final TextEditingController searchController = TextEditingController();
+
+  void initState() {
+
+    super.initState();
+  }
+
+  void queryListener(){
+    search(searchController.text);
+  }
+
+  void search(String query){
+    if (query.isEmpty) {
+      letters = allLetters;
+    }
+    else {
+      //Changing everything to lowercase and searching letters list
+      letters = allLetters.where((e) => e.toLowerCase().contains(query.toLowerCase())).toList();
+    }
+
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -45,19 +65,34 @@ class namePage extends StatelessWidget {
       backgroundColor: Color.fromRGBO(212, 239, 230, 1),
 
       body: SingleChildScrollView(
-         child: Column(
+         child: Padding(
+          padding: EdgeInsets.only(left: 8, right: 8),
+          child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget> [ //Search Bar
           SizedBox(height: 15),
           SearchBar(
             controller: searchController,
+            leading: IconButton(
+              onPressed: () {
+
+              }, 
+              icon: const  Icon(Icons.search),
+              ),
             hintText: 'Search Name',
           ),
           ],
          ),
+         ),
       ),
 
     );
+  }
+  
+  @override
+  State<StatefulWidget> createState() {
+    // TODO: implement createState
+    throw UnimplementedError();
   }
 }
 
