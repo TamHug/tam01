@@ -24,7 +24,7 @@ class letterModel{
      letters.add(
       letterModel(
         letter: 'B',
-        description: 'Require assistance', 
+        description: 'Using both hands, put your index finger on your thumb to create circles with each hand. Face the hands towards each other so the circles meet.', 
         imagePath: 'assets/images/Letters/B.png'
         ),
     );
@@ -52,21 +52,21 @@ class letterModel{
      letters.add(
       letterModel(
         letter: 'F',
-        description: 'Help', 
+        description: 'Index and middle finger on each hand places ontop of each other to create a cross. The right hand should be on top.', 
         imagePath: 'assets/images/Letters/F.png'
         ),
     );
      letters.add(
       letterModel(
         letter: 'G',
-        description: 'Help', 
+        description: 'Make a fist with both hands. Place the right hand on top of the left.', 
         imagePath: 'assets/images/Letters/G.png'
         ),
     );
      letters.add(
       letterModel(
         letter: 'H',
-        description: 'Help', 
+        description: 'Both hands open flat. Your left hand should be facing palm up. With your right hand facing palm down, swip up your left hand starting at your wrist and going to your finger tips. ', 
         imagePath: 'assets/images/Letters/H.png'
         ),
     );
@@ -80,35 +80,35 @@ class letterModel{
      letters.add(
       letterModel(
         letter: 'J',
-        description: 'Help', 
+        description: 'Left hand open flat. With your right index finger, trace your left index finger down towards your palm then up your left thumb.', 
         imagePath: 'assets/images/Letters/J.png'
         ),
     );
      letters.add(
       letterModel(
         letter: 'K',
-        description: 'Help', 
+        description: 'Curl your right index finger in and place half way up your left index finger.', 
         imagePath: 'assets/images/Letters/K.png'
         ),
     );
      letters.add(
       letterModel(
         letter: 'L',
-        description: 'Help please', 
+        description: 'Put your left hand flat facing palm up. Take your right index finger and place it on your palm.', 
         imagePath: 'assets/images/Letters/L.png'
         ),
     );
      letters.add(
       letterModel(
         letter: 'M',
-        description: 'Place your right index, middle and ring fingers together on your left palm. The laft hand should be flat open.', 
+        description: 'Place your right index, middle and ring fingers together on your left palm. The left hand should be flat open.', 
         imagePath: 'assets/images/Letters/M.png'
         ),
     );
      letters.add(
       letterModel(
         letter: 'N',
-        description: 'Place your right index and middle fingers together on your left palm. The laft hand should be flat open.', 
+        description: 'Place your right index and middle fingers together on your left palm. The left hand should be flat open.', 
         imagePath: 'assets/images/Letters/N.png'
         ),
     );
@@ -122,14 +122,14 @@ class letterModel{
     letters.add(
       letterModel(
         letter: 'P',
-        description: 'Help.', 
+        description: 'With your left hand, point your index finger upwards. Using your right hand, make a circle using your index and thumb and put them at the top of your index left finger.', 
         imagePath: 'assets/images/Letters/P.png'
         ),
     );
     letters.add(
       letterModel(
         letter: 'Q',
-        description: 'Help', 
+        description: 'With your left hand, creat a circle using your thumb and index finger with your palm pointing outwards. Place your right index finger on the outside of your left hand by your thumb.', 
         imagePath: 'assets/images/Letters/Q.png'
         ),
     );
@@ -143,7 +143,7 @@ class letterModel{
     letters.add(
       letterModel(
         letter: 'S',
-        description: 'Helpppppp', 
+        description: 'Cross your pinkie fingers with your left one under and your right over the top.', 
         imagePath: 'assets/images/Letters/S.png'
         ),
     );

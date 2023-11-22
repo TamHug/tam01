@@ -69,7 +69,7 @@ class _MyHomePageState extends State<MyHomePage> {
     }
     else {
       setState(() {
-        items = allItems.where((e) => e.letter.contains(query.toLowerCase())).toList();
+        items = allItems.where((e) => e.letter.contains(query.toUpperCase())).toList();
       });
 
     };
@@ -110,7 +110,7 @@ class _MyHomePageState extends State<MyHomePage> {
               child: ListView.builder(
                 itemCount: items.isEmpty ? allItems.length : items.length,
                 itemBuilder: (context, index) {
-                  final item = items.isEmpty ? allItems[index] : items[index];
+                  final item = items.isEmpty ? allItems[index] : items[index].letter;
             
                   return Card(
                     child: Column(
