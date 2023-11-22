@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:tam01/models/letterModel.dart';
 
 void main() {
   runApp(const MyApp());
@@ -34,11 +35,15 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  var allItems = List.generate(26, (index) => "item $index");
+  List<letterModel> allItems = [];
   var items = [];
   var searchHistory = [];
 
   final TextEditingController searchController = TextEditingController();
+
+  void _getLetters(){
+    allItems = letterModel.getLetters();
+  }
 
 @override
   void initState() {
@@ -64,7 +69,7 @@ class _MyHomePageState extends State<MyHomePage> {
     }
     else {
       setState(() {
-        items = allItems.where((e) => e.toLowerCase().contains(query.toLowerCase())).toList();
+        items = allItems.where((e) => e.letter.contains(query.toLowerCase())).toList();
       });
 
     };
@@ -72,6 +77,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
   @override
   Widget build(BuildContext context) {
+    _getLetters();
 
     return Scaffold(
       appBar: AppBar(
