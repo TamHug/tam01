@@ -181,7 +181,7 @@ class NavigationDrawer extends StatelessWidget {
        title: const Text('Name Search'),
        onTap: () {
         Navigator.pushReplacement(
-        context,MaterialPageRoute(builder: (context) => namePage (), //Navigating to the information page
+        context,MaterialPageRoute(builder: (context) => MyApp (), //Navigating to the information page
         ),
         );
        },

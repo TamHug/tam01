@@ -288,10 +288,10 @@ class NavigationDrawer extends StatelessWidget {
        leading: const Icon(Icons.person_outline_outlined),
        title: const Text('Name Search'),
        onTap: () {
-        Navigator.pushReplacement(
-        context,MaterialPageRoute(builder: (context) => namePage (), //Navigating to the information page
-        ),
-        );
+        //Navigator.pushReplacement(
+       // context,MaterialPageRoute(builder: (context) => namePage (), //Navigating to the information page
+       // ),
+        //);
        },
         ),
 
