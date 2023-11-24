@@ -17,11 +17,9 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     
     return MaterialApp(
-      title: 'Flutter Demo',
+      title: 'SignZ',
       debugShowCheckedModeBanner: false,
-      theme: ThemeData(
-        useMaterial3: true,
-      ),
+     
       home: const MyHomePage(title: 'SignZ'),
     );
   }
@@ -139,17 +137,30 @@ class _MyHomePageState extends State<MyHomePage> {
                  
             
                   return Card(
+                    
                     child: Column(
+
                       children: [
+                        SizedBox(height: 10),
+                        Image.asset(items[index].imagePath), //Displaying image
+                        
                         ListTile(
                           leading: SizedBox(height: 10),
-                          title: Text('$itemL'),
-                          subtitle:Text('$itemD'),
-
-                          trailing: Image.asset(items[index].imagePath),
+                          title:  Text( //Showing letter
+                            '                        $itemL\n', 
+                            style:TextStyle(
+                              fontSize: 20,
+                            ),
+                            ),
+                            //Showing Description
+                          subtitle:Text(
+                            '$itemD\n',
+                            textAlign: TextAlign.center,
+                            ),
                           ),
                       ],
                     ),
+                    
                   );
                 },
                 
