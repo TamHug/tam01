@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:tam01/models/letterModel.dart';
 import 'package:tam01/pages/home_pages.dart';
 import 'package:tam01/pages/info_page.dart';
-import 'package:flutter_svg/flutter_svg.dart';
+
 
 
 void main() {
@@ -135,13 +135,19 @@ class _MyHomePageState extends State<MyHomePage> {
                 itemCount: items.isEmpty ? allItems.length : items.length,
                 itemBuilder: (context, index) {
                   final itemL = items.isEmpty ? allItems[index] : items[index].letter;
+                  final itemD = items.isEmpty ? allItems[index] : items[index].description;
+                 
             
                   return Card(
                     child: Column(
                       children: [
-                        Text('$itemL'),
-                        SizedBox(height: 20),
-                        SvgPicture.asset(allItems[index].imagePath),
+                        ListTile(
+                          leading: SizedBox(height: 10),
+                          title: Text('$itemL'),
+                          subtitle:Text('$itemD'),
+
+                          trailing: Image.asset('assets/images/Letters/A.png'),
+                          ),
                       ],
                     ),
                   );
