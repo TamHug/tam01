@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:tam01/pages/home_pages.dart';
 import 'package:tam01/pages/name_page.dart';
+import 'package:tam01/pages/mSearch_page.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:url_launcher/url_launcher_string.dart';
 
@@ -281,17 +282,22 @@ class NavigationDrawer extends StatelessWidget {
     ListTile(
          leading: const Icon(Icons.insert_comment_outlined),
          title: const Text('Main Search'),
-         onTap: () {},
+          onTap: () {
+        Navigator.pushReplacement(
+        context,MaterialPageRoute(builder: (context) => mainSPage (), //Navigating to the information page
+        ),
+        );
+       },
         ),
       
          ListTile(
        leading: const Icon(Icons.person_outline_outlined),
        title: const Text('Name Search'),
        onTap: () {
-        //Navigator.pushReplacement(
-       // context,MaterialPageRoute(builder: (context) => namePage (), //Navigating to the information page
-       // ),
-        //);
+        Navigator.pushReplacement(
+        context,MaterialPageRoute(builder: (context) => namePage (), //Navigating to the information page
+        ),
+        );
        },
         ),
 
