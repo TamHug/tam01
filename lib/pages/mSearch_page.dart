@@ -1,15 +1,22 @@
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:tam01/firebase_options.dart';
 import 'package:tam01/pages/home_pages.dart';
 import 'package:tam01/pages/info_page.dart';
 import 'package:tam01/pages/name_page.dart';
 
 
 
-void main() {
+Future<void> main() async {
+
+  WidgetsFlutterBinding.ensureInitialized();
+
+  await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform, );
   runApp(const mainSPage());
 }
 
 class mainSPage extends StatelessWidget {
+
   const mainSPage({super.key});
 
   // This widget is the root of your application.
@@ -36,7 +43,7 @@ class MyMainSPage extends StatefulWidget {
 }
 
 class _MyMainSPageState extends State<MyMainSPage> {
-
+ String name = "";
 
   @override
   Widget build(BuildContext context) {
@@ -62,14 +69,28 @@ class _MyMainSPageState extends State<MyMainSPage> {
           ),
         centerTitle: true, //making the title center of the widget
 
+        
+       
       ),
 
        drawer: const NavigationDrawer(),
         backgroundColor: Color.fromRGBO(212, 239, 230, 1),
        // title: Text(widget.title),
-      
-      
-     
+      body: Center(
+        child: Padding(
+          padding: EdgeInsets.only(left: 8, right: 8),
+          child: Column(
+            children: <Widget>[
+           Card(
+            
+
+           ),
+
+          ],
+         ),
+        ),
+        ),
+
     );
   }
 }
