@@ -1,11 +1,10 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:tam01/firebase_options.dart';
 import 'package:tam01/pages/home_pages.dart';
 import 'package:tam01/pages/info_page.dart';
 import 'package:tam01/pages/name_page.dart';
-
-
 
 Future<void> main() async {
 
@@ -43,7 +42,7 @@ class MyMainSPage extends StatefulWidget {
 }
 
 class _MyMainSPageState extends State<MyMainSPage> {
- String name = "";
+ String main = "";
 
   @override
   Widget build(BuildContext context) {
@@ -76,21 +75,28 @@ class _MyMainSPageState extends State<MyMainSPage> {
        drawer: const NavigationDrawer(),
         backgroundColor: Color.fromRGBO(212, 239, 230, 1),
        // title: Text(widget.title),
-      body: Center(
-        child: Padding(
-          padding: EdgeInsets.only(left: 8, right: 8),
-          child: Column(
-            children: <Widget>[
-           Card(
-            
 
-           ),
+       body: StreamBuilder<QuerySnapshot>(
+        stream: FirebaseFirestore.instance.collection('SigNZ').snapshots(),
+        builder: (context, snapshot){
+          if (snapshot.hasError)
+          return Text('Something Went wrong');
 
-          ],
-         ),
-        ),
-        ),
+          if (snapshot.connectionState == ConnectionState.waiting) {
+            return Text ("Loading");
+          }
+          
+          return ListView.builder(
+            itemCount: snapshot.data!.docs.length,
+            itemBuilder: (context, index) {
+              var data = snapshot.data!.docs[index];
+            },
 
+          );
+        }
+
+       )
+    
     );
   }
 }

@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:tam01/models/letterModel.dart';
 import 'package:tam01/pages/home_pages.dart';
 import 'package:tam01/pages/info_page.dart';
-//import 'package:tam01/pages/name_page.dart';
+import 'package:tam01/pages/name_page.dart';
 import 'package:tam01/pages/mSearch_page.dart';
 
 
