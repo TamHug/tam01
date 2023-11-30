@@ -1,6 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/src/rendering/box.dart';
 import 'package:tam01/firebase_options.dart';
 import 'package:tam01/pages/home_pages.dart';
 import 'package:tam01/pages/info_page.dart';
@@ -77,6 +78,7 @@ class _MyMainSPageState extends State<MyMainSPage> {
        // title: Text(widget.title),
 
        body: StreamBuilder<QuerySnapshot>(
+        
         stream: FirebaseFirestore.instance.collection('SigNZ').snapshots(),
         builder: (context, snapshot){
           if (snapshot.hasError)
@@ -87,9 +89,26 @@ class _MyMainSPageState extends State<MyMainSPage> {
           }
           
           return ListView.builder(
+            physics: NeverScrollableScrollPhysics(),
+            shrinkWrap: true,
             itemCount: snapshot.data!.docs.length,
             itemBuilder: (context, index) {
               var data = snapshot.data!.docs[index];
+              return ListTile(
+                leading: Container(
+                  decoration: BoxDecoration(
+                    image: DecorationImage(
+                    image: NetworkImage(data['path']),
+                    fit: BoxFit.cover,
+                   ),
+                   shape: BoxShape.rectangle,
+                   ),
+                ),
+                title: Text(data['Name']),
+                subtitle: Text(data['Maori']),
+
+
+              );
             },
 
           );
