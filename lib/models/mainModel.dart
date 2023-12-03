@@ -231,14 +231,14 @@ class mainModel {
               'Make a fist with your hands. Bump your right hand on top of your left hand. Bring them apart. User you left hand to point towards the sky. With your right hand, place the tips of your index finger on the tip of your thumb. Place the right hand with your finger and thumb sitting on the left index finger tip (make a P) ',
           imagePath: 'assets/images/Words/grandpa.png'),
     );
-    signs.add(
+    /* signs.add(
       mainModel(
           name: 'See',
           maori: 'Kite',
           description:
               'With your right hand, point to your right eye then point away from your body.',
           imagePath: 'assets/images/Words/see.png'),
-    );
+    );*/
     signs.add(
       mainModel(
           name: 'Angry',
