@@ -15,7 +15,7 @@ class mainModel {
     required this.imagePath,
   });
 
-  static List<mainModel> getLetters() {
+  static List<mainModel> getSigns() {
     List<mainModel> signs = [];
 
     signs.add(

@@ -1,16 +1,16 @@
 import 'package:flutter/material.dart';
-import 'package:tam01/models/letterModel.dart';
+import 'package:tam01/models/mainModel.dart';
 import 'package:tam01/pages/home_pages.dart';
 import 'package:tam01/pages/info_page.dart';
 import 'package:tam01/pages/name_page.dart';
 import 'package:tam01/pages/search_page.dart';
 
 void main() {
-  runApp(const namePage());
+  runApp(const searchPage());
 }
 
-class namePage extends StatelessWidget {
-  const namePage({super.key});
+class searchPage extends StatelessWidget {
+  const searchPage({super.key});
 
   // This widget is the root of your application.
   @override
@@ -18,29 +18,29 @@ class namePage extends StatelessWidget {
     return MaterialApp(
       title: 'SignZ',
       debugShowCheckedModeBanner: false,
-      home: const MyNamePage(title: 'SignZ'),
+      home: const MySearchPage(title: 'SignZ'),
     );
   }
 }
 
-class MyNamePage extends StatefulWidget {
-  const MyNamePage({super.key, required this.title});
+class MySearchPage extends StatefulWidget {
+  const MySearchPage({super.key, required this.title});
 
   final String title;
 
   @override
-  State<MyNamePage> createState() => _MyHomePageState();
+  State<MySearchPage> createState() => _MySearchPageState();
 }
 
-class _MyHomePageState extends State<MyNamePage> {
-  List<letterModel> allItems = [];
+class _MySearchPageState extends State<MySearchPage> {
+  List<mainModel> allItems = [];
   var items = [];
   var searchHistory = [];
 
   final TextEditingController searchController = TextEditingController();
 
-  void _getLetters() {
-    allItems = letterModel.getLetters();
+  void _getSigns() {
+    allItems = mainModel.getSigns();
   }
 
   @override
@@ -68,7 +68,7 @@ class _MyHomePageState extends State<MyNamePage> {
     } else {
       setState(() {
         items = allItems
-            .where((e) => e.letter.contains(query.toUpperCase()))
+            .where((e) => e.name.contains(query.toUpperCase()))
             .toList();
       });
     }
@@ -77,7 +77,7 @@ class _MyHomePageState extends State<MyNamePage> {
 
   @override
   Widget build(BuildContext context) {
-    _getLetters();
+    _getSigns();
 
     return Scaffold(
       appBar: AppBar(
@@ -118,7 +118,7 @@ class _MyHomePageState extends State<MyNamePage> {
                   onPressed: () {},
                   icon: Icon(Icons.search),
                 ),
-                hintText: "Search Name",
+                hintText: "Search Sign",
               ),
               SizedBox(height: 20),
               Expanded(
@@ -126,7 +126,7 @@ class _MyHomePageState extends State<MyNamePage> {
                   itemCount: items.isEmpty ? allItems.length : items.length,
                   itemBuilder: (context, index) {
                     final itemL =
-                        items.isEmpty ? allItems[index] : items[index].letter;
+                        items.isEmpty ? allItems[index] : items[index].name;
                     final itemD = items.isEmpty
                         ? allItems[index]
                         : items[index].description;
