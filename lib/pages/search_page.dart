@@ -130,6 +130,8 @@ class _MySearchPageState extends State<MySearchPage> {
                     final itemD = items.isEmpty
                         ? allItems[index]
                         : items[index].description;
+                    final itemM =
+                        items.isEmpty ? allItems[index] : items[index].maori;
 
                     return items.isEmpty
                         ? Card()
@@ -142,12 +144,23 @@ class _MySearchPageState extends State<MySearchPage> {
 
                                 ListTile(
                                   leading: SizedBox(height: 10),
-                                  title: Text(
-                                    //Showing letter
-                                    '                        $itemL\n',
-                                    style: TextStyle(
-                                      fontSize: 20,
-                                    ),
+                                  title: Container(
+                                    child: Column(children: <Widget>[
+                                      Text(
+                                        //Showing name
+                                        '$itemL\n',
+                                        style: TextStyle(
+                                          fontSize: 20,
+                                        ),
+                                      ),
+                                      //Showing Maori
+                                      Text(
+                                        '$itemM\n',
+                                        style: TextStyle(
+                                          fontSize: 15,
+                                        ),
+                                      ),
+                                    ]),
                                   ),
                                   //Showing Description
                                   subtitle: Text(
